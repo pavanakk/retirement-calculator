@@ -1,0 +1,53 @@
+{
+  "name": "retirement-calculator",
+  "version": "1.0.0",
+  "author": "Christian Bromann <christian@saucelabs.com>",
+  "description": "Boilerplate project to run WebdriverIO tests with Jasmine",
+  "license": "MIT",
+  "homepage": "https://www.securian.com/insights-tools/retirement-calculator.html",
+  "type": "module",
+  "keywords": [
+    "webdriver",
+    "webdriverio",
+    "jasmine",
+    "e2e",
+    "selenium",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdriverio/jasmine-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webdriverio/jasmine-boilerplate/issues"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "wdio run wdio.sauce.conf.ts",
+    "test:local": "wdio run wdio.local.conf.ts --cucumberOpts.tagExpression='@RetirmentCalculator'",
+    "test:sauce": "wdio run wdio.sauce.conf.ts"
+  },
+  "devDependencies": {
+    "@wdio/eslint": "^0.1.0",
+    "@types/jasmine": "^5.1.5",
+    "@wdio/cli": "9.15.0",
+    "@wdio/globals": "9.15.0",
+    "@wdio/jasmine-framework": "9.14.0",
+    "@wdio/local-runner": "9.15.0",
+    "@wdio/sauce-service": "9.15.0",
+    "@wdio/spec-reporter": "9.14.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "webdriverio": "9.15.0",
+    "@wdio/cucumber-framework":"9.15.0",
+    "multiple-cucumber-html-reporter":"3.9.2",
+    "wdio-cucumberjs-json-reporter": "^6.0.1",
+    "@wdio/allure-reporter": "^9.11.0"
+
+    
+  },
+  "optionalDependencies": {
+    "chromedriver":"137.0.1",
+    "edgedriver":"6.1.1"
+  }
+}
