@@ -1,13 +1,7 @@
 import Page from './page.js'
 
 class ResultsPage extends Page {
-    /**
-     * //calculator-results-container
-    //result-message
-    //Edit info
-    //See full results
 
-     */
     get calculatorResultsSection() {
         return $('#calculator-results-section')
     }

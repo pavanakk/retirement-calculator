@@ -203,8 +203,16 @@ export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        /**
+         * Custom command to perform click and add value into input text box
+         */
+        browser.addCommand('clickAndAddValue', async (selector: any, dollarAmount: string) => {
+            await selector.waitForClickable();
+            await selector.click();
+            await selector.addValue(dollarAmount);
+        });
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {string} commandName hook command name

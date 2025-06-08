@@ -84,30 +84,27 @@ class RetirmentCalculatorPage extends Page {
         return $('#calculator-input-alert')
     }
     /**
-     *
+     * Fill retirement plan details
+     *  require - fill only required details
+     *  all - fill all the fields
      * @param form_data
      */
     public async fillRetirementPlanDetails(form_data: string) {
         if (form_data == "required" || form_data == "all") {
             await this.currentAge.setValue("40");
             await this.retirementAge.setValue("68");
-            await this.currentIncome.click();
-            await this.currentIncome.addValue("100000");
-            await this.currentRetirementSavings.click();
-            await this.currentRetirementSavings.addValue("500000");
-            await this.currentRetirementContribution.click();
-            await this.currentRetirementContribution.setValue("10");
-            await this.savingsIncreaseRate.click();
-            await this.savingsIncreaseRate.setValue("1");
+            await browser.clickAndAddValue(this.currentIncome, "100000");
+            await browser.clickAndAddValue(this.currentRetirementSavings, "500000");
+            await browser.clickAndAddValue(this.currentRetirementContribution, "10");
+            await browser.clickAndAddValue(this.savingsIncreaseRate, "1");
         }
         if (form_data == "all") {
-            await this.spouseIncome.click();
-            await this.spouseIncome.addValue("75000");
+            await browser.clickAndAddValue(this.spouseIncome, "75000");
         }
     }
 
     /**
-     *
+     * Fill the details if benefits toggle is Yes
      * @param benefits_toggle
      * @param form_data
      * @param marital_status
@@ -121,14 +118,13 @@ class RetirmentCalculatorPage extends Page {
             await this.selectSocialBenefits(benefits_toggle);
             await this.selectMarriedStatus(marital_status);
             if (form_data == "all") {
-                await this.socialSecurityOverride.click();
-                await this.socialSecurityOverride.addValue("4000");
+                await browser.clickAndAddValue(this.socialSecurityOverride, "4000");
             }
         }
     }
 
     /**
-     *
+     * Clicks "Calculate" button for submission
      */
     public async submitRetirementPlan() {
         await this.calculateResults.click();
@@ -136,7 +132,7 @@ class RetirmentCalculatorPage extends Page {
     }
 
     /**
-     *
+     * Select Social Secutiry benefits radio
      * @param benefits_toggle
      */
     public async selectSocialBenefits(benefits_toggle: string) {
@@ -151,7 +147,7 @@ class RetirmentCalculatorPage extends Page {
     }
 
     /**
-     *
+     * Select Married Status radio
      * @param marital_status
      */
     public async selectMarriedStatus(marital_status: string) {
@@ -166,20 +162,21 @@ class RetirmentCalculatorPage extends Page {
     }
 
     /**
-     *
+     * Click "Adjust Default Values" link to add default values
      */
     public async clickAdjustDefaultValues() {
         await this.adjustdefaultValues.click();
     }
 
     /**
-     *
+     * Update Adjust default values
      * @param inflation
      */
     public async addAdjustDefaultValues(inflation: string) {
-        await this.additionalIncome.waitForClickable();
-        await this.additionalIncome.click();
-        await this.additionalIncome.addValue("500");
+        await browser.clickAndAddValue(this.additionalIncome, "500");
+        // await this.additionalIncome.waitForClickable();
+        // await this.additionalIncome.click();
+        // await this.additionalIncome.addValue("500");
         await this.retirementDuration.setValue("20");
         if (inflation === "Yes") {
             await this.includeInflation.waitForClickable();
@@ -195,7 +192,7 @@ class RetirmentCalculatorPage extends Page {
     }
 
     /**
-     *
+     * Click "Save Default Values" button to save default values
      */
     public async saveDefaultValues() {
         await this.savePersonalizedValues.scrollIntoView();

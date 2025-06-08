@@ -6,6 +6,9 @@ export default class Page {
         return await browser.url(path);
     }
     
+    /**
+     * Method to accept Cookies after opening the web page
+     */
     public async acceptCookies(){
         await browser.pause(3000)
         if(await this.acceptCookiesBtn.isExisting()){
