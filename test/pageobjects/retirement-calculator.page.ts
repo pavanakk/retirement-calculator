@@ -174,9 +174,6 @@ class RetirmentCalculatorPage extends Page {
      */
     public async addAdjustDefaultValues(inflation: string) {
         await browser.clickAndAddValue(this.additionalIncome, "500");
-        // await this.additionalIncome.waitForClickable();
-        // await this.additionalIncome.click();
-        // await this.additionalIncome.addValue("500");
         await this.retirementDuration.setValue("20");
         if (inflation === "Yes") {
             await this.includeInflation.waitForClickable();
