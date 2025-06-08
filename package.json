@@ -1,25 +1,22 @@
 {
   "name": "retirement-calculator",
   "version": "1.0.0",
-  "author": "Christian Bromann <christian@saucelabs.com>",
-  "description": "Boilerplate project to run WebdriverIO tests with Jasmine",
+  "author": "Pavana Kottala <pavanakumari.kottala@gmail.com>",
+  "description": "Boilerplate project to run WebdriverIO tests with Cucumber",
   "license": "MIT",
   "homepage": "https://www.securian.com/insights-tools/retirement-calculator.html",
   "type": "module",
   "keywords": [
     "webdriver",
     "webdriverio",
-    "jasmine",
+    "cucumber",
     "e2e",
     "selenium",
     "test"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webdriverio/jasmine-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/webdriverio/jasmine-boilerplate/issues"
+    "url": "git+https://github.com/pavanakk/retirement-calculator.git"
   },
   "scripts": {
     "lint": "eslint .",
