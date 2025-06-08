@@ -2,7 +2,7 @@ export default class Page {
 
     get acceptCookiesBtn() {return $('#onetrust-accept-btn-handler')}
 
-    async open (path: string) {
+    async open (path: string = '') {
         return await browser.url(path);
     }
     

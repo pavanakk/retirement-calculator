@@ -3,9 +3,7 @@ import retirementCalculatorPage from "../pageobjects/retirement-calculator.page"
 import resultsPage from "../pageobjects/results.page";
 
 Given(/^the user is on the Retirement Savings Calculator form page$/, async () => {
-    await retirementCalculatorPage.open(
-        "https://www.securian.com/insights-tools/retirement-calculator.html"
-    );
+    await retirementCalculatorPage.open();
     await retirementCalculatorPage.acceptCookies();
 });
 

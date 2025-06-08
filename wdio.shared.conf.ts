@@ -1,8 +1,9 @@
-import url from 'node:url'
-import path from 'node:path'
-import fs from 'node:fs/promises'
+import url from 'node:url';
+import path from 'node:path';
+import fs from 'node:fs/promises';
 import  {generate} from 'multiple-cucumber-html-reporter';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
+import envConfig from './data/env.url.js';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
@@ -47,7 +48,7 @@ export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    //maxInstances: 10,
+    // maxInstances: 10,
     //
     // ===================
     // Test Configurations
@@ -80,7 +81,7 @@ export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    //baseUrl: 'https://www.securian.com/insights-tools/retirement-calculator.html',
+    baseUrl: envConfig.baseUrl,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
