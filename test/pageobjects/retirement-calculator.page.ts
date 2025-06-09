@@ -93,6 +93,7 @@ class RetirmentCalculatorPage extends Page {
         if (form_data == "required" || form_data == "all") {
             await this.currentAge.setValue("40");
             await this.retirementAge.setValue("68");
+            //Adding Dollar amount is require to click and add value
             await browser.clickAndAddValue(this.currentIncome, "100000");
             await browser.clickAndAddValue(this.currentRetirementSavings, "500000");
             await browser.clickAndAddValue(this.currentRetirementContribution, "10");
